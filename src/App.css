@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:300,regular,500,600,700");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*:focus {
+  outline: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: "Fira Code", sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #263b41;
+  color: #f7f5cc;
 }
 
-.App-link {
-  color: #61dafb;
+body .App > h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1.3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body .App .length-control {
+  display: inline-block;
+  /* width: 256px; */
+  width: 16rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+body .App .time-adjust {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
+body .App #break-label,
+body .App #session-label {
+  font-size: 1.85rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+body .App button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #f7f5cc;
+}
+
+body .App button:hover {
+  opacity: 0.6;
+}
+
+body .App button:disabled {
+  cursor: not-allowed;
+}
+
+#break-increment,
+#break-decrement,
+#session-increment,
+#session-decrement,
+#break-length,
+#session-length {
+  color: #f7f5cc;
+  font-size: 2rem;
+}
+
+#break-increment,
+#break-decrement,
+#session-increment,
+#session-decrement {
+  padding: 0 20px;
+  height: -webkit-fill-available;
+}
+
+body .App .timer {
+  border: 7px solid #e3b505;
+  margin: 20px auto 10px auto;
+  width: 400px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+body .App .timer .timer-wrapper {
+  height: 100px;
+  margin-left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  text-align: center;
+  /* -webkit-text-stroke-width: medium; */
+  font-weight: 800;
+}
+
+.timer-wrapper #timer-label, .timer-wrapper #time-left {
+  width: 100%;
+}
+
+body .App .timer .timer-actions {
+  /* height: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 2.3rem;
+  position: relative;
+  top: 80px;
+  right: 140px;
+  text-align: center;
+  font-weight: 800;
+}
+
+#reset{
+  font-size: 1.5rem;
+  margin-left: .3rem;
+}
+
+body .App .timer .timer-actions #start{
+  margin-right: .5rem;
 }
